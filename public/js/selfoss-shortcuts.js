@@ -30,6 +30,11 @@ selfoss.shortcuts = {
             window.open($('.entry.selected .entry-source').attr('href'));
         });
         
+        // Reload the current view
+        $(document).bind('keydown', 'r', function() {
+            selfoss.reloadList();
+        });
+        
         // mark all as read
         $(document).bind('keydown', 'ctrl+m', function() {
             $('#nav-mark').click();
@@ -108,7 +113,7 @@ selfoss.shortcuts = {
             current.find('.entry-toolbar').show();
             selfoss.events.entriesToolbar(current);
             // automark as read
-            if($('body').hasClass('auto_mark_as_read') && current.hasClass('unread'))
+            if($('#config').data('auto_mark_as_read')=="1" && current.hasClass('unread'))
                 current.find('.entry-unread').click();
         }
         

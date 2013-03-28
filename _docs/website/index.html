@@ -54,8 +54,9 @@
                 <li>mobile support (Android, iOS, iPad)</li>
                 <li>use selfoss to live stream and collect all your posts, tweets, feeds in one place</li>
                 <li>lightweight PHP application with less than 2 MB</li>
-                <li>supports MySQL and Sqlite Databases</li>
+                <li>supports MySQL, PostgreSQL and Sqlite Databases</li>
                 <li>OPML Import</li>
+                <li>easy installation: upload and run</li>
             </ul>
         </div>
     </div>
@@ -249,6 +250,14 @@ db_port=3306</code>
                         <td class="documentation-first-column">auto_mark_as_read</td>
                         <td>set this to 1 for autmatically marking items as read after open/read them.</td>
                     </tr>
+                    <tr>
+                        <td class="documentation-first-column">language</td>
+                        <td>set 0 or leave empty for auto detection (browser language) or set "de" for german, "en" for english, "fr" for french, "cs" for czech, "nl" for dutch, "ru" for russian, "tr" for turkish</td>
+                    </tr>
+                    <tr>
+                        <td class="documentation-first-column">anonymizer</td>
+                        <td>set here your anonymizer service url. e.g.: anonymizer=http://anonym.to/?</td>
+                    </tr>
                 </table>
             </div>
             
@@ -308,6 +317,10 @@ db_port=3306</code>
                     <tr>
                         <td class="documentation-first-column">Ctrl+m</td>
                         <td>mark all as read</td>
+                    </tr>
+                    <tr>
+                        <td class="documentation-first-column">r</td>
+                        <td>reload the list</td>
                     </tr>
                 </table>
             </div>

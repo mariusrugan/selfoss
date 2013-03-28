@@ -69,6 +69,18 @@ Version 2.4-SNAPSHOT
 * Opening feed search focus the search input field
 * Scroll blockquotes and pre on overflow (especially good for mobile devices)
 * new option for automatically mark items as read
+* new share buttons for email and pocket (thanks a lot to Francis Noel)
+* new shortcut r for reloading the current list
+* new internationalization (language files for German, English, French, Turkish, Dutch, Czech and Russian included)
+* make article id generation more reliable
+* fix some font issues
+* fix JavaScript error in login screen
+* autofocus username on login
+* add open in new window button for mobile view
+* allow choosing tags in article list
+* concurent multiples updates makes no longer duplicates entries
+* Reload items on mark as read
+* anonymizer support
 
 Version 2.3
 * new shortcut library jquery hotkeys (thanks a lot to Sigill)
