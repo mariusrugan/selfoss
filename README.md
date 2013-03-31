@@ -4,7 +4,7 @@ selfoss
 Copyright (c) 2013 Tobias Zeising, tobias.zeising@aditu.de  
 http://selfoss.aditu.de  
 Licensed under the GPLv3 license  
-Version 2.4-SNAPSHOT
+Version 2.4
 
 
 INSTALLATION
@@ -50,7 +50,7 @@ Visit the page http://yourselfossurl.com/opml for importing your OPML File. If y
 CHANGELOG
 ---------
 
-Version 2.4-SNAPSHOT
+Version 2.4
 * prevent error on icons parsing error
 * new homepage parameter (thanks a lot to Jean Baptiste Favre)
 * new button for open an articles source
@@ -66,12 +66,12 @@ Version 2.4-SNAPSHOT
 * use more eye catching unread stats in main navigation
 * show source title in selfoss RSS feed (thanks a lot to Darkwing1)
 * load sources for update by last update time (thanks a lot to Lars Formella)
-* Opening feed search focus the search input field
+* Opening feed search focuses the search input field
 * Scroll blockquotes and pre on overflow (especially good for mobile devices)
 * new option for automatically mark items as read
 * new share buttons for email and pocket (thanks a lot to Francis Noel)
 * new shortcut r for reloading the current list
-* new internationalization (language files for German, English, French, Turkish, Dutch, Czech and Russian included)
+* new internationalization (language files for German, English, French, Turkish, Dutch, Czech, Russian, Latvian, traditional and simplified Chinese included)
 * make article id generation more reliable
 * fix some font issues
 * fix JavaScript error in login screen
@@ -81,6 +81,8 @@ Version 2.4-SNAPSHOT
 * concurent multiples updates makes no longer duplicates entries
 * Reload items on mark as read
 * anonymizer support
+* selfoss rss feed support tag filtering (?tag=) (thanks a lot to Francis Noel)
+* fix tag render bug
 
 Version 2.3
 * new shortcut library jquery hotkeys (thanks a lot to Sigill)
