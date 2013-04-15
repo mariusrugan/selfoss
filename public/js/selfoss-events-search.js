@@ -7,8 +7,10 @@ selfoss.events.search = function() {
         // show words in top of the page
         var words = term.split(" ");
         $('#search-list').html('');
+        var itemId = 0;
         $.each(words, function(index, item) {
-            $('#search-list').append('<li>' + item + '</li>');
+            $('#search-list').append('<li id="search-item-' + itemId + '">' + item + '</li>');
+            itemId++;
         });
         
         // execute search
@@ -26,10 +28,11 @@ selfoss.events.search = function() {
     $('#search-button').unbind('click').click(function () {
         if($('#search').hasClass('active')==false) {
             $('#search').addClass('active');
-            $('#search-term').focus();
+            $('#search-term').focus().select();
             return;
         }
         executeSearch($('#search-term').val());
+        $('#search-term').blur();
     });
     
     // navigation search button for mobile navigation
@@ -39,20 +42,19 @@ selfoss.events.search = function() {
     });
     
     // keypress enter in search inputfield
-    $('#search-term').unbind('keypress').keypress(function(e) {
+    $('#search-term').unbind('keyup').keyup(function(e) {
         if(e.which == 13)
             $('#search-button').click();
+        if(e.keyCode == 27)
+            $('#search-remove').click();
     });
     
     // search term list in top of the page
     $('#search-list li').unbind('click').click(function () {
-        var term = $('#search-term').val();
-        term = term.replace($(this).html(), "").split(" ");
-        var newterm = "";
-        $.each(term, function(index, item) {
-            newterm = newterm + " " + $.trim(item);
-        });
-        newterm = $.trim(newterm);
+        var termArray = $('#search-term').val().split(" ");
+        termId = $(this).attr('id').replace("search-item-", "");
+        termArray.splice(termId, 1);
+        var newterm = termArray.join(" ");
         $('#search-term').val(newterm);
         executeSearch($('#search-term').val());
     });
@@ -61,6 +63,7 @@ selfoss.events.search = function() {
     $('#search-remove').unbind('click').click(function () {
         if(selfoss.filter.search=='') {
             $('#search').removeClass('active');
+            $('#search-term').blur();
             return;
         }
         
