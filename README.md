@@ -4,7 +4,7 @@ selfoss
 Copyright (c) 2013 Tobias Zeising, tobias.zeising@aditu.de  
 http://selfoss.aditu.de  
 Licensed under the GPLv3 license  
-Version 2.7-SNAPSHOT
+Version 2.8-SNAPSHOT
 
 
 INSTALLATION
@@ -12,7 +12,7 @@ INSTALLATION
 
 1. Upload all files of this folder (IMPORTANT: also upload the invisible .htaccess files)
 2. Make the directories data/cache, data/favicons, data/logs, data/thumbnails, data/sqlite and public/ writeable
-3. Insert database access data in config.ini (see below -- you have not to change anything if you would like to use sqlite)
+3. Insert database access data in config.ini (see below -- you don't have to change anything if you want to use sqlite)
 3. You don't have to install the database, it will be created automatically
 4. Create cronjob for updating feeds and point it to http://yourselfossurl.com/update via wget or curl. You can also execute the update.php from commandline.
 
@@ -50,7 +50,19 @@ Visit the page http://yourselfossurl.com/opml for importing your OPML File. If y
 CHANGELOG
 ---------
 
-Version 2.7-SNAPSHOT
+Version 2.8-SNAPSHOT
+* new Polish translation (thanks a lot to Piotr Dymacz)
+* improved Expires section and Compression in .htaccess (thanks a lot to S Anand)
+* make api item listing, tags and sources stats accessible for non loggedin users in public mode
+* update fat free php framework version 3.0.8
+* new configuration parameter for default readability api key
+* new configuration parameter for allowing unauthorized access for the update job
+* new delicious support (thanks a lot to bbeardsley)
+* support ssl proxy (thanks a lot to zajad)
+* new readability support (thanks a lot to hayk)
+* pass original url to external sites except for opening the anonymized url (thanks a lot to bbeardsley)
+
+Version 2.7
 * new spout for instapaper (thanks a lot to janeczku)
 * new Hungarian translation (thanks a lot to Sancho)
 * fix keyboard shortcut on some browsers
@@ -58,6 +70,18 @@ Version 2.7-SNAPSHOT
 * new rss feed for selfoss releases: http://selfoss.aditu.de/feed.php
 * fix bug on removing search terms (thanks a lot to ochristi)
 * translation for login page (thanks a lot to jicho)
+* new japanese language file (thanks a lot to wowo)
+* new shortcuts (thanks a lot to jicho)
+* fix issues with refreshing the items list and slow ajax requests (thanks a lot to Sean Rand)
+* don't leave behind sp-container divs when refreshing the tags (thanks a lot to Sean Rand)
+* clean up orphaned items of deleted sources (thanks a lot to Sean Rand)
+* update fat free php framework to newest versoin 3.0.6
+* only allow update for localhost or loggedin users (thanks a lot to Tiouss)
+* added Facebook page feed (thanks a lot to Thomas Muguet)
+* fix memory bug on icon generation (thanks a lot to Matthieu Codron)
+* new opml export (thanks a lot to Sean Rand)
+* new norwegian translation (thanks a lot to Kjetil Elde)
+* set default title if no one was given by the feed
 
 Version 2.6
 * fixed OPML import for other formats (thanks a lot to Remy Gardette)

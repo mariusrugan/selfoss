@@ -176,8 +176,17 @@ class Index extends BaseController {
      * @return void
      */
     public function update() {
+        // only allow access for localhost and loggedin users
+        if (\F3::get('allow_public_update_access')!=1 
+                && $_SERVER['REMOTE_ADDR'] !== $_SERVER['SERVER_ADDR'] 
+                && $_SERVER['REMOTE_ADDR'] !== "127.0.0.1"
+                && \F3::get('auth')->isLoggedin() != 1)
+            die("unallowed access");
+    
+        // update feeds
         $loader = new \helpers\ContentLoader();
         $loader->update();
+        
         echo "finished";
     }
     

@@ -18,7 +18,7 @@
             <?PHP echo $this->item['unread']==1 ? 'unread' : ''; ?>">
     
     <!-- icon -->
-    <a href="<?PHP echo $this->item['link']; ?>" class="entry-icon">
+    <a href="<?PHP echo trim(\F3::get('anonymizer')) . $this->item['link']; ?>" class="entry-icon">
         <?PHP if(strlen(trim($this->item['icon']))>0 && $this->item['icon']!="0") : ?>
         <img src="<?PHP echo 'favicons/'.$this->item['icon']; ?>" alt="<?PHP echo $sourcetitle ?>" />
         <?PHP endif; ?>
@@ -35,6 +35,7 @@
     
     <!-- source -->
     <a href="<?PHP echo trim(\F3::get('anonymizer')) . $this->item['link']; ?>" class="entry-source entry-source<?PHP echo $this->item['source']; ?>" target="_blank"><?PHP echo $sourcetitle ?></a>
+    <a href="<?PHP echo $this->item['link']; ?>" class="entry-link"></a>
 
     <span class="entry-separator">&bull;</span>
 
@@ -60,6 +61,8 @@
             <li class="entry-sharetwitter" title="twitter">twitter</li>
             <li class="entry-sharefacebook" title="facebook">facebook</li>
             <li class="entry-sharepocket" title="pocket">pocket</li>
+            <li class="entry-sharedelicious" title="delicious">delicious</li>
+            <li class="entry-sharereadability" title="readability">readability</li>
             <li class="entry-shareemail" title="email">email</li>
         </ul>
     </div>
@@ -74,6 +77,8 @@
         <li class="entry-sharetwitter entry-share" title="twitter">&nbsp;</li>
         <li class="entry-sharefacebook entry-share" title="facebook">&nbsp;</li>
         <li class="entry-sharepocket entry-share" title="pocket">&nbsp;</li>
+        <li class="entry-sharedelicious entry-share" title="delicious">&nbsp;</li>
+        <li class="entry-sharereadability entry-share" title="readability">&nbsp;</li>
         <li class="entry-shareemail entry-share" title="email">&nbsp;</li>
         <li class="entry-close"></li>
     </ul>

@@ -1,4 +1,3 @@
-
 /* base */
 
 html {
@@ -119,6 +118,16 @@ input {
         overflow:hidden;
     }
     
+        .nav-tags-collapsed {
+            padding-left: 20px;
+            background: url(images/nav-collapsed.png) center left no-repeat;
+        }
+        
+        .nav-tags-expanded {
+            padding-left: 20px;
+            background: url(images/nav-expanded.png) center left no-repeat;
+        }
+        
         #nav-tags li {
             position:relative;
             color:#b9b9b9;
@@ -157,6 +166,16 @@ input {
         overflow:hidden;
     }
     
+        .nav-sources-collapsed {
+            padding-left: 20px;
+            background: url(images/nav-collapsed.png) center left no-repeat;
+        }
+        
+        .nav-sources-expanded {
+            padding-left: 20px;
+            background: url(images/nav-expanded.png) center left no-repeat;
+        }
+        
         #nav-sources {
             display:none;
         }
@@ -345,8 +364,8 @@ input {
 
 .entry ,
 .source {
-    margin:5px 50px 5px 5px;
-    padding:5px;
+    margin:1px 50px 3px 5px; 
+    padding:5px; 
     -moz-border-radius:4px;
     -webkit-border-radius:4px;
     -khtml-border-radius:4px;
@@ -430,6 +449,10 @@ input {
         .entry-content p {
             margin-bottom:0.6em;
         }
+        
+        .entry-content ol li {
+			list-style:decimal inside;
+		}
 
         .entry-content li {
             margin:0.3em;
@@ -463,6 +486,10 @@ input {
         text-decoration:none;
     }
     
+    .entry-link {
+        display:none;
+    }
+
     .entry-source,
     .entry-separator,
     .entry-datetime {
@@ -546,7 +573,15 @@ input {
         .entry-sharepocket {
             background-image:url(images/pocket.png);
         }
+
+        .entry-sharereadability {
+            background-image:url(images/readability.png);
+        }
     
+        .entry-sharedelicious {
+            background-image:url(images/delicious.png);
+        }
+
         .entry-smartphone-share li.entry-shareemail,
         .entry-toolbar li.entry-shareemail {
             background-image:url(images/mail.png);
@@ -595,6 +630,10 @@ input {
         
 /* sources */
 
+.source input {
+    width:60%;
+}
+
 .source-title {
     display:inline;
     color:#333333;
@@ -602,6 +641,10 @@ input {
 
 .source-error {
     color:#ff0000;
+}
+
+.source.error {
+    border: 1px solid #e74c3c;
 }
 
 .source-edit-delete,
@@ -661,19 +704,28 @@ input {
     text-decoration:none;
 }
 
+.source-add, .source-export {
+    font-size:0.85em;
+}
+
 .source-add {
     cursor:pointer;
-    font-size:0.85em;
     margin-left:20px;
     float:left;
 }
 
+.source-export {
+    margin-right: 75px;
+    float: right;
+    
+}
+
+.source-export,
 .source-opml {
     font-size:0.60em;
     text-decoration:none;
     color:#777;
     margin-left:10px;
-    clear:both;
 }
 
 .source-new .source-edit-form {
@@ -798,7 +850,7 @@ body.publicmode.notloggedin .entry-unread {
 @media screen and (min-width: 1024px) {
 
     body.publicmode.notloggedin  .entry-toolbar {
-        display:none !important;
+        display:none;
     }
 
 }
@@ -941,6 +993,10 @@ body.publicmode.notloggedin .entry-unread {
     .source-add { 
         margin-left:20px;
         text-align:left;
+    }
+
+    .source-export {
+        margin-right:20px;
     }
 }
 
@@ -1156,6 +1212,15 @@ body.publicmode.notloggedin .entry-unread {
             margin-bottom:5px;
             list-style:none;
         }
+        
+    .source-opml,
+    .source-export {
+        display:none;
+    }
+    
+    .source-add {
+        float:none;
+    }
 }
 
 
